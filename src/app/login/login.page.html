@@ -16,9 +16,12 @@
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
-
+    <div @fadeIn>
     <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+  </div>
   </form>
+  
+ 
 
   <ion-button expand="full" fill="outline" (click)="onRegister()">
     Registrarse

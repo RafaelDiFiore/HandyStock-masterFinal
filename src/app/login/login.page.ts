@@ -2,11 +2,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [ 
+        style({ opacity: 0 }),
+        animate('500ms ease-in', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
