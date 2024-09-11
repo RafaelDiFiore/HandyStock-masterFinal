@@ -8,21 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  registerForm: FormGroup;
+  regForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
-    this.registerForm = this.formBuilder.group({
+  constructor(private router: Router, private formBuilder: FormBuilder) {
+    this.regForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
+
+  
+
   ngOnInit() {}
 
+
+  
+  volver(){
+    this.router.navigate(['/login'])
+  }
+
   onRegister() {
-    if (this.registerForm.valid) {
-      const { username, email, password } = this.registerForm.value;
+    if (this.regForm.valid) {
+      const { username, email, password } = this.regForm.value;
       console.log('Registro exitoso:', { username, email, password });
       // Aquí podrías añadir la lógica de registro (e.g., llamada a un servicio)
       this.router.navigate(['/login']); // Redirige al usuario al login después de registrarse
