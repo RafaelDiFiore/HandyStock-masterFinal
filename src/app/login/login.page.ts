@@ -1,6 +1,6 @@
 // login.page.ts
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -38,7 +38,9 @@ export class LoginPage implements OnInit {
     }
   }
 
-
+  volver(){
+    this.router.navigate(['/inicio'])
+  }
   onRegister() {
     
     this.router.navigate(['/register']); 

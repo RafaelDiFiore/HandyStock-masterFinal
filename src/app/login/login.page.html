@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <button class="ion-float-left" (click)="volver()"> <ion-icon name="arrow-back-outline"></ion-icon></button>
     <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,15 +18,17 @@
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <div @fadeIn>
-    <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+      
+    <div id="botonesLogin">
+      <ion-button expand="80%" type="submit">Iniciar Sesión</ion-button>
+      <ion-button expand="80%" fill="outline" (click)="onRegister()">Registrarse</ion-button>
+    </div>
   </div>
   </form>
   
  
 
-  <ion-button expand="full" fill="outline" (click)="onRegister()">
-    Registrarse
-  </ion-button>
+  
 
 
 </ion-content>
